@@ -1,3 +1,24 @@
+@keyframes fadeBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-family: "Blaka Ink", system-ui;
+  font-size: 4rem;
+  color: #345401;
+  animation: fadeBounce 2s ease-out;
+}
+
 body {
   font-family: "Pixelify Sans", sans-serif;
   font-weight: 500; /* <weight>: Use a value from 400 to 700 */
@@ -6,17 +27,41 @@ body {
   padding: 2rem;
 }
 
-h1 {
-  font-family: "Blaka Ink", system-ui;
-  font-size: 4rem;
-  color: #345401;
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 button {
   font-family: "Pixelify Sans", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.2rem;
   padding: 0.5rem 1rem;
   background-color: #ffe4e1;
   border: none;
   cursor: pointer;
+  animation: popIn 0.6s ease-out;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  animation: pulse 0.6s infinite;
 }
