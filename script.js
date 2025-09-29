@@ -1,16 +1,22 @@
-const button = document.getElementById("magicButton");
+const imageButton = document.getElementById("magicImageButton");
 const message = document.getElementById("secretMessage");
 
-button.addEventListener("click", function() {
-  if (message.style.display === "none") {
+let isMagicShown = false;
+
+imageButton.addEventListener("click", function() {
+  isMagicShown = !isMagicShown;
+
+  if (isMagicShown) {
+    imageButton.src = "images/zapateo.jpeg";
     message.style.display = "block";
-    button.textContent = "🫣 Hide the magic";
-    document.body.style.backgroundColor = "#e6cc99ff";
+    document.body.style.backgroundColor = "#ffe4e1";
   } else {
+    imageButton.src = "images/dabke.jpeg";
     message.style.display = "none";
-    button.textContent = "✨ Reveal the magic!";
-    document.body.style.backgroundColor = "#c5c177ff";
+    document.body.style.backgroundColor = "white";
   }
 });
+
+
 
 
